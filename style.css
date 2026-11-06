@@ -1,0 +1,36 @@
+:root {
+  --bg: #f5f7fa; --surface: #ffffff; --ink: #1c2430; --muted: #5d6b7d;
+  --line: #d5dce6; --accent: #1f5fbf; --ok: #2d7a4f; --err: #b3261e;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #151a22; --surface: #1d2430; --ink: #e8edf4; --muted: #9aa8bb;
+          --line: #2f3a4b; --accent: #6ea4f5; --ok: #6cc08f; --err: #f2877f; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+       font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 640px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+h1 { margin: 0; font-size: 2rem; letter-spacing: -0.02em; }
+header p { margin: .25rem 0 1.5rem; color: var(--muted); }
+form { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1rem; }
+label { display: block; font-weight: 600; font-size: .9rem; margin: .5rem 0 .25rem; }
+input[type=text] { width: 100%; padding: .55rem .65rem; font: inherit; color: inherit;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 4px; }
+input:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button { font: inherit; cursor: pointer; padding: .4rem .8rem; border-radius: 4px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+button[type=submit] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.form-actions { margin-top: 1rem; display: flex; gap: .5rem; }
+#status-message { min-height: 1.5rem; margin: 1rem 0 .5rem; color: var(--muted); }
+#status-message.error { color: var(--err); font-weight: 600; }
+.task-item { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--line);
+  border-radius: 6px; padding: .8rem 1rem; margin-bottom: .75rem; }
+.task-item.done { border-left-color: var(--ok); }
+.task-item.done .task-title { text-decoration: line-through; color: var(--muted); }
+.task-title { margin: 0; font-size: 1.1rem; }
+.task-description { margin: .25rem 0; color: var(--muted); }
+.task-status { font-size: .85rem; color: var(--muted); }
+.task-actions { margin-top: .6rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+.delete-task { color: var(--err); }
+footer { margin-top: 2rem; }
+a { color: var(--accent); }
